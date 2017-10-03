@@ -1,4 +1,5 @@
 <?php
+echo "<h1> <center><u> PHP PRACTICE</u> </center> </h1> <br>";
 $date = date('Y-m-d', time());
 echo "<b>1.</b>The value of \$date: ".$date."<br>";
 $tar = "2017/05/24";
