@@ -1,13 +1,13 @@
 <?php
-$date =  date('Y-m-d', time());
-echo "The value of \$date: ".$date."<br>";
-
+$date = date('Y-m-d', time());
+echo "<b>1.</b>The value of \$date: ".$date."<br>";
 $tar = "2017/05/24";
 echo "The value of \$tar: ".$tar."<br>";
-
 $year = array("2012", "396", "300","2000", "1100", "1089");
 echo "The value of \$year: ";
-print_r($year)
+print_r($year);
+echo"<hr>";
+echo '<br>';
 
 $str="BIKALPA";
 $replace=str_replace("-","/",$date);
@@ -37,8 +37,10 @@ class main{
 		for($i=0;$i< sizeof($repi);$i++){
 			if ($repi[$i]=='/'){
 				echo   $i .  "   ";
+
 			}
 		}
+		echo "<br><hr>";
 	}
 	
 	public function words($date){
@@ -69,10 +71,45 @@ class main{
 		foreach($expo as $save){
 			
 		echo  $save;
-		echo "  ";
+		echo  "  ";
 		}
 		echo"<hr>";
 	}
+	public function leapYear($year){
+		 echo "<b> 10.</b> Leap Year <u>(<i>SWITCH CASE</i>)</u>";
+ 
+      echo "<br>";
+ 
+      foreach ($year as $z ) {
+      switch((($z % 4) == 0) && ((($z % 100) != 0) || (($z % 400) == 0)))
+        {
+ 
+      case True:
+		  echo $z . " = <B>TRUE </b> (LEAP YEAR)";
+      break;
+ 
+      default:
+		  echo $z . " = FALSE ( NOT A LEAP YEAR)";
+      }
+      echo "<br>";
+      }
+      echo "<br>";
+                 echo "Leap Year (<i>FOR LOOP</i>)";
+      echo "<br>";
+      for($i=0; $i< sizeof($year); $i++){
+      switch((($year[$i] % 4) == 0) && ((($year[$i] % 100) != 0) || (($year[$i] % 400) == 0))){
+      case True:
+		  echo $year[$i] . " = <b>TRUE</b> (LEAP YEAR)";
+      break;
+      default:
+      echo $year[$i] . "= FALSE(NOT A LEAP YEAR) ";
+ 
+      }
+      echo "<br>";
+                
+      }
+                 echo '<hr>';
+                 }
 }
 $obj=new main();
 $obj->replace($date);
@@ -83,4 +120,5 @@ $obj->stlength($str);
 $obj->ascii($str);
 $obj->substring($date);
 $obj->arraybreak($replace);
+$obj->leapYear($year);
 ?>
